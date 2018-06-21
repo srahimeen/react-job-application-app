@@ -14,14 +14,14 @@ class Apply extends React.Component {
                         <Typography variant="display1" gutterBottom>{this.props.roleName}</Typography>
                     </Grid>
                     <Grid item sm={4}>
-                        <Typography variant="Subheading" gutterBottom>{this.props.roleDescription}</Typography>
+                        <Typography variant="subheading" gutterBottom>{this.props.roleDescription}</Typography>
                     </Grid>
                     <Grid item sm={4}>
-                        <Typography variant="Subheading" gutterBottom>{this.props.roleLocation}</Typography>
+                        <Typography variant="subheading" gutterBottom>{this.props.roleLocation}</Typography>
 					</Grid>
 					<Grid item sm={4}>
-						{this.props.currentPage==="text" && <Button variant="raised" color="primary" type="submit" onClick={this.props.applyClickHandler}>Apply</Button>}
-						{this.props.currentPage==="form" && <Button variant="raised" color="primary" type="submit" onClick={this.props.applyClickHandler}>Cancel</Button>}
+						{this.props.currentPage==="text" && <Button variant="raised" type="apply" color="primary" onClick={this.props.applyClickHandler}>Apply</Button>}
+						{this.props.currentPage==="form" && <Button variant="raised" type="apply" color="primary" onClick={this.props.applyClickHandler}>Cancel</Button>}
 					</Grid>
 				</Grid>
 			</form>

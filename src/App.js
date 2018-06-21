@@ -4,10 +4,34 @@ import './App.css';
 
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
+import { createMuiTheme } from '@material-ui/core/styles';
+import indigo from '@material-ui/core/colors/indigo';
+import pink from '@material-ui/core/colors/pink';
+import red from '@material-ui/core/colors/red';
 
 import Form from "./components/Form"
 import Apply from "./components/Apply"
 import DisplayText from "./components/DisplayText"
+
+//set style
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: '#757ce8',
+      main: '#3f50b5',
+      dark: '#002884',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#ff7961',
+      main: '#f44336',
+      dark: '#ba000d',
+      contrastText: '#000',
+    },
+  },
+});
+
 
 class App extends Component {
   //state.page can be apply or form
@@ -23,6 +47,7 @@ class App extends Component {
   applyClickHandler = async (e) => {
     e.preventDefault();
     try {
+      console.log('Apply clicked!');
       if(this.state.currentPage==="text"){
         this.setState({
           currentPage: "form"
@@ -32,6 +57,18 @@ class App extends Component {
           currentPage: "text"
         });
       }
+    } catch(err) {
+      this.setState({
+        error: err
+      });
+    }
+  }
+
+  submitClickHandler = async (e) => {
+    e.preventDefault();
+    try {
+      console.log('Submit clicked!');
+      alert("Submitted!");
     } catch(err) {
       this.setState({
         error: err
@@ -53,7 +90,7 @@ class App extends Component {
           />
         </Grid>
           <Grid item md={12}>
-            {this.state.currentPage==="form" && <Form />}
+            {this.state.currentPage==="form" && <Form submitClickHandler={this.submitClickHandler} />}
             {this.state.currentPage==="text" && <DisplayText />}
           </Grid>
         </Grid>
