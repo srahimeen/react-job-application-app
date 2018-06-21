@@ -16,7 +16,27 @@ class App extends Component {
     roleName: "Software Engineer",
     roleDescription: "Research & Development",
     roleLocation: "Denver, Colorado",
-    currentPage: "text"
+    currentPage: "text",
+    error: undefined
+  }
+
+  applyClickHandler = async (e) => {
+    e.preventDefault();
+    try {
+      if(this.state.currentPage==="text"){
+        this.setState({
+          currentPage: "form"
+        });
+      } else if (this.state.currentPage==="form"){
+        this.setState({
+          currentPage: "text"
+        });
+      }
+    } catch(err) {
+      this.setState({
+        error: err
+      });
+    }
   }
 
   render() {
@@ -25,9 +45,11 @@ class App extends Component {
         <Grid container>
         <Grid item md={6}>
           <Apply 
+            currentPage={this.state.currentPage}
             roleName={this.state.roleName}
             roleDescription={this.state.roleDescription}
             roleLocation={this.state.roleLocation}
+            applyClickHandler={this.applyClickHandler}
           />
         </Grid>
           <Grid item md={12}>

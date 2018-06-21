@@ -1,5 +1,6 @@
 import React from "react";
 
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -15,9 +16,13 @@ class Apply extends React.Component {
                     <Grid item sm={4}>
                         <Typography variant="Subheading" gutterBottom>{this.props.roleDescription}</Typography>
                     </Grid>
-                    <Grid item sm={2}>
+                    <Grid item sm={4}>
                         <Typography variant="Subheading" gutterBottom>{this.props.roleLocation}</Typography>
-                    </Grid>
+					</Grid>
+					<Grid item sm={4}>
+						{this.props.currentPage==="text" && <Button variant="raised" color="primary" type="submit" onClick={this.props.applyClickHandler}>Apply</Button>}
+						{this.props.currentPage==="form" && <Button variant="raised" color="primary" type="submit" onClick={this.props.applyClickHandler}>Cancel</Button>}
+					</Grid>
 				</Grid>
 			</form>
 		);
