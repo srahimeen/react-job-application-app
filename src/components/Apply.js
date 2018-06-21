@@ -11,7 +11,7 @@ class Apply extends React.Component {
 			<form>
 				<Grid container>
 					<Grid item sm={12}>
-                        <Typography variant="display1" gutterBottom>{this.props.roleName}</Typography>
+                        <Typography variant="display2" gutterBottom>{this.props.roleName}</Typography>
                     </Grid>
                     <Grid item sm={4}>
                         <Typography variant="subheading" gutterBottom>{this.props.roleDescription}</Typography>
