@@ -10,16 +10,14 @@ import Form from "./components/Form"
 class App extends Component {
   //state.page can be apply or form
   state = {
-    page: "apply"
+    page: "form"
   }
   render() {
     return (
       <div>
         <Grid container>
           <Grid item md={12}>
-
-              <Form />
-
+              {this.state.page==="form" && <Form />}
           </Grid>
         </Grid>
       </div>
