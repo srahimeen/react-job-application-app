@@ -2,7 +2,9 @@ import React from "react";
 
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import Input from '@material-ui/core/Input';
 import Typography from '@material-ui/core/Typography';
+import FormLabel from '@material-ui/core/FormLabel';
 import Grid from '@material-ui/core/Grid';
 
 class Form extends React.Component {
@@ -10,15 +12,18 @@ class Form extends React.Component {
 		return (
 			<form>
 				<Grid container>
-					<Grid item sm={6}>
-						<Typography variant="subheading" gutterBottom>First Name:</Typography>
-						<Typography variant="subheading" gutterBottom>Last Name:</Typography> 
-					</Grid>
-					<Grid item sm={6}>
-						<TextField label="First Name" floatingLabelText="First Name" name="firstName" onChange={this.change}/> <br />
-						<TextField label="Last Name" floatingLabelText="Last Name" name="lastName" onChange={this.change} />
-					</Grid>
 					<Grid item sm={12}>
+						<TextField
+						id="firstName"
+						label="First Name"
+						margin="normal"
+						/> <span /> <br />
+						<TextField
+						id="lastName"
+						label="Last Name"
+						margin="normal"
+						/> <span /> <br />
+						<br />
 						<Button variant="raised" color="primary" type="submit">Submit</Button>
 					</Grid>
 				</Grid>
