@@ -7,6 +7,7 @@ import Paper from '@material-ui/core/Paper';
 
 import Form from "./components/Form"
 import Apply from "./components/Apply"
+import DisplayText from "./components/DisplayText"
 
 class App extends Component {
   //state.page can be apply or form
@@ -15,7 +16,7 @@ class App extends Component {
     roleName: "Software Engineer",
     roleDescription: "Research & Development",
     roleLocation: "Denver, Colorado",
-    currentPage: "form"
+    currentPage: "text"
   }
 
   render() {
@@ -30,7 +31,8 @@ class App extends Component {
           />
         </Grid>
           <Grid item md={12}>
-              {this.state.currentPage==="form" && <Form />}
+            {this.state.currentPage==="form" && <Form />}
+            {this.state.currentPage==="text" && <DisplayText />}
           </Grid>
         </Grid>
       </div>
