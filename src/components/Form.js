@@ -13,19 +13,19 @@ class Form extends React.Component {
 			<div>
 				<Grid container spacing={8}>
 					<Grid item xs={12} sm={12}>
-						<form>
+						<form onSubmit={this.props.submitClickHandler} >
 							<TextField
-							id="firstName"
+							name="firstName"
 							label="First Name"
 							margin="normal"
 							/> <span /> <br />
 							<TextField
-							id="lastName"
+							name="lastName"
 							label="Last Name"
 							margin="normal"
 							/> <span /> <br />
 							<br />
-							<Button variant="raised" color="primary" onClick={this.props.submitClickHandler}>Submit</Button>
+							<Button variant="raised" color="primary" type="submit">Submit</Button>
 						</form>
 					</Grid>
 				</Grid>

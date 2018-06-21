@@ -36,6 +36,7 @@ const theme = createMuiTheme({
 class App extends Component {
   //state.page can be apply or form
   state = {
+    test: undefined, //TODO: remove
     companyName: "MyTechCompany",
     roleName: "Software Engineer",
     roleDescription: "Research & Development",
@@ -47,7 +48,7 @@ class App extends Component {
   applyClickHandler = async (e) => {
     e.preventDefault();
     try {
-      console.log('Apply clicked!');
+      console.log('Apply clicked!'); //TODO: remove
       if(this.state.currentPage==="text"){
         this.setState({
           currentPage: "form"
@@ -66,9 +67,14 @@ class App extends Component {
 
   submitClickHandler = async (e) => {
     e.preventDefault();
+    //get values from form
+    const firstName = e.target.elements.firstName.value;
     try {
-      console.log('Submit clicked!');
-      alert("Submitted!");
+      console.log('Submit clicked!' + firstName); //TODO: remove
+      this.setState({
+        test: firstName
+      });
+      alert(this.state.test); //TODO: remove
     } catch(err) {
       this.setState({
         error: err
