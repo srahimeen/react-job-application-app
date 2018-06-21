@@ -10,8 +10,9 @@ import Grid from '@material-ui/core/Grid';
 class Form extends React.Component {
 	render() {
 		return (
-				<Grid container>
-					<Grid item sm={12}>
+			<div>
+				<Grid container spacing={8}>
+					<Grid item xs={12}>
 						<form>
 							<TextField
 							id="firstName"
@@ -28,6 +29,7 @@ class Form extends React.Component {
 						</form>
 					</Grid>
 				</Grid>
+			</div>
 		);
 	}
 };
