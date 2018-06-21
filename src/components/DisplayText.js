@@ -10,7 +10,7 @@ class DisplayText extends React.Component {
 			<div>
 				<form>
 					<Grid container spacing={8}>
-						<Grid item xs={12}>
+						<Grid item xs={12} sm={12}>
 							<Typography variant="display1" gutterBottom><p>Description</p></Typography>
 							<Typography variant="body2" gutterBottom>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante urna, tempor id vehicula non, cursus quis libero. Vivamus ut erat commodo, suscipit diam at, consequat nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras sollicitudin tempus nulla vitae interdum. Nam augue purus, consequat eu lacinia sit amet, iaculis eu quam. Cras fringilla nunc sapien, non tristique ipsum finibus at. Nulla ullamcorper sapien dolor, eget iaculis eros porttitor vel. Morbi in elementum magna. Praesent vel magna lobortis, euismod magna sed, congue turpis. Donec massa arcu, pretium nec vestibulum eu, maximus nec dolor. Donec vestibulum pretium luctus. In et massa et magna efficitur sagittis. Duis mattis consectetur fringilla. Sed viverra, quam sit amet interdum sodales, sem velit vulputate risus, a bibendum ipsum sem vitae felis.</p>

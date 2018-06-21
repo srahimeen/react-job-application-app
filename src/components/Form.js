@@ -12,7 +12,7 @@ class Form extends React.Component {
 		return (
 			<div>
 				<Grid container spacing={8}>
-					<Grid item xs={12}>
+					<Grid item xs={12} sm={12}>
 						<form>
 							<TextField
 							id="firstName"
