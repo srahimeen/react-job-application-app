@@ -4,9 +4,12 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^1.2.3",
+    "bootstrap": "^4.1.1",
     "react": "^16.4.1",
     "react-alert": "^4.0.4",
+    "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.1",
+    "react-inline-grid": "^0.5.3",
     "react-scripts": "1.1.4"
   },
   "scripts": {
