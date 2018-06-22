@@ -68,7 +68,7 @@ class App extends Component {
   submitClickHandler = async (e) => {
     e.preventDefault();
     //get values from form
-    const firstName = e.target.elements.firstName.value;
+    const firstName = e.target.elements.firstName.value; //TODO: write to api
     try {
       console.log('Submit clicked!' + firstName); //TODO: remove
       this.setState({
@@ -85,21 +85,21 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Grid container>
-        <Grid item md={6}>
-          <Apply 
-            currentPage={this.state.currentPage}
-            roleName={this.state.roleName}
-            roleDescription={this.state.roleDescription}
-            roleLocation={this.state.roleLocation}
-            applyClickHandler={this.applyClickHandler}
-          />
-        </Grid>
-          <Grid item md={12}>
-            {this.state.currentPage==="form" && <Form submitClickHandler={this.submitClickHandler} />}
-            {this.state.currentPage==="text" && <DisplayText />}
-          </Grid>
-        </Grid>
+        <div className="container">
+          <div className="row top-buffer">
+            <Apply 
+              currentPage={this.state.currentPage}
+              roleName={this.state.roleName}
+              roleDescription={this.state.roleDescription}
+              roleLocation={this.state.roleLocation}
+              applyClickHandler={this.applyClickHandler}
+            />
+          </div>
+            <div className="row top-buffer">
+              {this.state.currentPage==="form" && <Form submitClickHandler={this.submitClickHandler} />}
+              {this.state.currentPage==="text" && <DisplayText />}
+            </div>
+          </div>
       </div>
     );
   }
