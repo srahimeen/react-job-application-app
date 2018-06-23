@@ -1,28 +1,34 @@
 import React from "react";
 
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
+
+import {Container, Row, Col, Button} from 'reactstrap';
 
 class ApplyHeader extends React.Component {
 	render() {
 		return (
 			<div>
-				<Grid container spacing={8}>
-					<Grid item xs={12} sm={12}>
-						<Typography variant="display2" gutterBottom>{this.props.roleName}</Typography>
-					</Grid>
-					<Grid item xs={12} sm={4}>
-						<Typography variant="headline" gutterBottom>{this.props.roleDescription}</Typography>
-					</Grid>
-					<Grid item xs={12} sm={4}>
-						<Typography variant="headline" gutterBottom>{this.props.roleLocation}</Typography>
-					</Grid>
-					<Grid item xs={12} sm={4}>
-						{this.props.currentPage==="text" && <Button variant="raised" type="apply" color="primary" onClick={this.props.applyClickHandler}>Apply</Button>}
-						{this.props.currentPage==="form" && <Button variant="raised" type="apply" color="primary" onClick={this.props.applyClickHandler}>Cancel</Button>}
-					</Grid>
-				</Grid>
+				<Container>
+					<Row>
+						<Col>
+							<h1>{this.props.roleName}</h1>
+						</Col>
+					</Row>
+					<Row className="row-fluid">
+					<div className="d-flex justify-content-between">
+						<Col xs="4" sm="4" md="4">
+							<h5>{this.props.roleDescription}</h5>
+						</Col>
+						<Col xs="4" sm="4" md="4">
+							<h5>{this.props.roleLocation}</h5>
+						</Col>
+						<Col xs="4" sm="4" md="4">
+							{this.props.currentPage==="text" && <Button color="primary" onClick={this.props.applyClickHandler}>Apply</Button>}
+							{this.props.currentPage==="form" && <Button color="primary" onClick={this.props.applyClickHandler}>Cancel</Button>}
+						</Col>
+					</div>
+					</Row>
+				</Container>
 			</div>
 		);
 	}

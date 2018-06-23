@@ -76,7 +76,7 @@ class ApplyForm extends React.Component {
 								</Col>
 								<Col>
 									<Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-										<DropdownToggle caret>
+										<DropdownToggle caret color="primary">
 											{this.state.dropdownValue}
 										</DropdownToggle>
 										<DropdownMenu>
@@ -89,7 +89,7 @@ class ApplyForm extends React.Component {
 							</Row>
 							<Row className="justify-content-center top-buffer">
 								<Col>
-									<Button type="submit" className="btn btn-primary">Submit</Button>
+									<Button type="submit" className="btn btn-primary" color="primary">Submit</Button>
 								</Col>
 							</Row>
 						</FormGroup>
