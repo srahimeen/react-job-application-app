@@ -10,7 +10,8 @@ class Application extends React.Component {
 	
 		this.toggle = this.toggle.bind(this);
 		this.state = {
-		  dropdownOpen: false
+		  dropdownOpen: false,
+		  value: "Select"
 		};
 	  }
 	
@@ -18,6 +19,12 @@ class Application extends React.Component {
 	this.setState(prevState => ({
 		dropdownOpen: !prevState.dropdownOpen
 	}));
+	}
+
+	select = async (event) => {
+		this.setState({
+			value: event.target.innerText
+		});
 	}
 
 	//dropdown logic end
@@ -51,12 +58,12 @@ class Application extends React.Component {
 								<Col>
 									<Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
 										<DropdownToggle caret>
-											{this.state.stateSelected}
+											{this.state.value}
 										</DropdownToggle>
 										<DropdownMenu>
-											<DropdownItem>FL</DropdownItem>
-											<DropdownItem>CA</DropdownItem>
-											<DropdownItem>NY</DropdownItem>
+											<DropdownItem onClick={this.select}>FL</DropdownItem>
+											<DropdownItem onClick={this.select}>CA</DropdownItem>
+											<DropdownItem onClick={this.select}>NY</DropdownItem>
 										</DropdownMenu>
 									</Dropdown>
 								</Col>
