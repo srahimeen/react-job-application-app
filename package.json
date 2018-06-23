@@ -10,7 +10,8 @@
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.1",
     "react-inline-grid": "^0.5.3",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "reactstrap": "^6.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

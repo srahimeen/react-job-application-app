@@ -9,12 +9,11 @@ import indigo from '@material-ui/core/colors/indigo';
 import pink from '@material-ui/core/colors/pink';
 import red from '@material-ui/core/colors/red';
 
-import Form from "./components/Form"
+import Application from "./components/Application"
 import Apply from "./components/Apply"
 import DisplayText from "./components/DisplayText"
 
 //set style
-
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -96,7 +95,7 @@ class App extends Component {
             />
           </div>
             <div className="row top-buffer">
-              {this.state.currentPage==="form" && <Form submitClickHandler={this.submitClickHandler} />}
+              {this.state.currentPage==="form" && <Application submitClickHandler={this.submitClickHandler} />}
               {this.state.currentPage==="text" && <DisplayText />}
             </div>
           </div>

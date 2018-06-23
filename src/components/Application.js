@@ -2,37 +2,36 @@ import React from "react";
 
 import Typography from '@material-ui/core/Typography';
 
-import { DropdownButton, MenuItem} from 'react-bootstrap';
+import { Container, Row, Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
-
-class Form extends React.Component {
+class Application extends React.Component {
 	render() {
 		return (
 			<div>
 				<form onSubmit={this.props.submitClickHandler}>
-					<div className="container">
+					<Container>
 						<div className="form-group">
-							<div className="row top-buffer">
-								<div className="col">
+							<Row className="top-buffer">
+								<Col>
 									<Typography variant="subheading" htmlFor="firstName">First Name</Typography>
-								</div>
-								<div className="col">
+								</Col>
+								<Col>
 									<input type="text" className="form-control" name="firstName" placeholder="First Name"></input>
-								</div>
-							</div>
-							<div className="row top-buffer">
-								<div className="col">
+								</Col>
+							</Row>
+							<Row className="top-buffer">
+								<Col>
 									<Typography variant="subheading" htmlFor="lastName">Last Name</Typography>
-								</div>
-								<div className="col">
+								</Col>
+								<Col>
 									<input type="text" className="form-control" name="lastName" placeholder="Last Name"></input>
-								</div>
-							</div>
-							<div className="row top-buffer">
-								<div className="col">
+								</Col>
+							</Row>
+							<Row className="top-buffer">
+								<Col>
 									<Typography variant="subheading" htmlFor="state">State</Typography>
-								</div>
-								<div className="col">
+								</Col>
+								<Col>
 									<div className="dropdown">
 										<button 
 											className="btn btn-secondary dropdown-toggle" 
@@ -48,17 +47,17 @@ class Form extends React.Component {
 											<a className="dropdown-item" href="#nogo">Item 3</a>
 										</div>
 									</div>
-								</div>
-							</div>
+								</Col>
+							</Row>
 							<div className="row justify-content-center top-buffer">
 								<button type="submit" className="btn btn-primary">Submit</button>
 							</div>
 						</div>
-					</div>
+					</Container>
 				</form>
 			</div>
 		);
 	}
 };
 
-export default Form;
+export default Application;
