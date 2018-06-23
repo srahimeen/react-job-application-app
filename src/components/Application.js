@@ -26,13 +26,32 @@ class Application extends React.Component {
 			value: event.target.innerText
 		});
 	}
-
 	//dropdown logic end
+
+	//click handler start
+	submitClickHandler = async (e) => {
+		e.preventDefault();
+		//get values from form
+		const firstName = e.target.elements.firstName.value; //TODO: write to api
+		try {
+		  console.log('Submit clicked!' + firstName); //TODO: remove
+		  this.setState({
+			test: firstName
+		  });
+		  alert(this.state.test); //TODO: remove
+		} catch(err) {
+		  this.setState({
+			error: err
+		  });
+		}
+	}
+	//click handler end
+
 
 	render() {
 		return (
 			<div>
-				<Form onSubmit={this.props.submitClickHandler}>
+				<Form onSubmit={this.submitClickHandler}>
 					<Container>
 						<FormGroup>
 							<Row className="top-buffer">
