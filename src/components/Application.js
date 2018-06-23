@@ -10,15 +10,13 @@ class Application extends React.Component {
 	
 		this.toggle = this.toggle.bind(this);
 		this.state = {
-		  dropdownOpen: false,
-		  stateSelected: "State"
+		  dropdownOpen: false
 		};
 	  }
 	
 	toggle(event) {
 	this.setState(prevState => ({
-		dropdownOpen: !prevState.dropdownOpen,
-		stateSelected: event.currentTarget.textContent
+		dropdownOpen: !prevState.dropdownOpen
 	}));
 	}
 
