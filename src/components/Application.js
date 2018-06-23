@@ -89,7 +89,7 @@ class Application extends React.Component {
 							</Row>
 							<Row className="justify-content-center top-buffer">
 								<Col>
-									<Button type="submit" className="btn btn-secondary">Submit</Button>
+									<Button type="submit" className="btn btn-primary">Submit</Button>
 								</Col>
 							</Row>
 						</FormGroup>
