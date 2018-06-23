@@ -2,7 +2,7 @@ import React from "react";
 
 import { Container, Row, Col, Button, Form, FormGroup, Label, Input, FormText, Dropdown, DropdownToggle, DropdownMenu, DropdownItem  } from 'reactstrap';
 
-class Application extends React.Component {
+class ApplyForm extends React.Component {
 
 	//dropdown logic start
 	constructor(props) {
@@ -11,7 +11,7 @@ class Application extends React.Component {
 		this.toggle = this.toggle.bind(this);
 		this.state = {
 		  dropdownOpen: false,
-		  value: "Select"
+		  dropdownValue: "Select"
 		};
 	  }
 	
@@ -23,22 +23,22 @@ class Application extends React.Component {
 
 	select = async (event) => {
 		this.setState({
-			value: event.target.innerText
+			dropdownValue: event.target.innerText
 		});
 	}
 	//dropdown logic end
 
 	//click handler start
-	submitClickHandler = async (e) => {
-		e.preventDefault();
+	submitClickHandler = async (event) => {
+		event.preventDefault();
 		//get values from form
-		const firstName = e.target.elements.firstName.value; //TODO: write to api
+		const firstName = event.target.elements.firstName.value; //TODO: write to api
 		try {
-		  console.log('Submit clicked!' + firstName); //TODO: remove
+		  console.log('Submit clicked!'); //TODO: remove
 		  this.setState({
 			test: firstName
 		  });
-		  alert(this.state.test); //TODO: remove
+		  alert(this.state.test + "-->" + this.state.dropdownValue); //TODO: remove
 		} catch(err) {
 		  this.setState({
 			error: err
@@ -77,7 +77,7 @@ class Application extends React.Component {
 								<Col>
 									<Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
 										<DropdownToggle caret>
-											{this.state.value}
+											{this.state.dropdownValue}
 										</DropdownToggle>
 										<DropdownMenu>
 											<DropdownItem onClick={this.select}>FL</DropdownItem>
@@ -100,4 +100,4 @@ class Application extends React.Component {
 	}
 };
 
-export default Application;
+export default ApplyForm;

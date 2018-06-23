@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 
-class DisplayText extends React.Component {
+class JobInfo extends React.Component {
 	render() {
 		return (
 			<div>
@@ -27,4 +27,4 @@ class DisplayText extends React.Component {
 	}
 };
 
-export default DisplayText;
+export default JobInfo;

@@ -3,9 +3,8 @@ import React from "react";
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 
-class Apply extends React.Component {
+class ApplyHeader extends React.Component {
 	render() {
 		return (
 			<div>
@@ -29,4 +28,4 @@ class Apply extends React.Component {
 	}
 };
 
-export default Apply;
+export default ApplyHeader;

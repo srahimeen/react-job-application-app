@@ -3,14 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 
 
-import Application from "./components/Application"
-import Apply from "./components/Apply"
-import DisplayText from "./components/DisplayText"
+import ApplyForm from "./components/ApplyForm"
+import ApplyHeader from "./components/ApplyHeader"
+import JobInfo from "./components/JobInfo"
 
 
 
 class App extends Component {
-  //state.page can be apply or form
   state = {
     test: undefined, //TODO: remove
     companyName: "MyTechCompany",
@@ -46,7 +45,7 @@ class App extends Component {
       <div>
         <div className="container">
           <div className="row top-buffer">
-            <Apply 
+            <ApplyHeader 
               currentPage={this.state.currentPage}
               roleName={this.state.roleName}
               roleDescription={this.state.roleDescription}
@@ -55,8 +54,8 @@ class App extends Component {
             />
           </div>
             <div className="row top-buffer">
-              {this.state.currentPage==="form" && <Application />}
-              {this.state.currentPage==="text" && <DisplayText />}
+              {this.state.currentPage==="form" && <ApplyForm />}
+              {this.state.currentPage==="text" && <JobInfo />}
             </div>
           </div>
       </div>
