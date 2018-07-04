@@ -50,10 +50,9 @@ class ApplyForm extends React.Component {
 
 	render() {
 		return (
-			<div>
 				<Form onSubmit={this.submitClickHandler}>
-					<Container>
-						<FormGroup>
+					<FormGroup>
+						<Container>
 							<Row className="top-buffer">
 								<Col>
 									<Label variant="subheading" for="firstName">First Name</Label>
@@ -135,15 +134,22 @@ class ApplyForm extends React.Component {
 									<Input type="text" className="form-control" name="phone" placeholder="Phone Number"></Input>
 								</Col>
 							</Row>
+							<Row className="top-buffer">
+								<Col>
+									<Label variant="subheading" for="resume">Resume</Label>
+								</Col>
+								<Col>
+									<Input type="file"></Input>
+								</Col>
+							</Row>
 							<Row className="justify-content-center top-buffer">
 								<Col>
 									<Button type="submit" className="btn btn-primary" color="primary">Submit</Button>
 								</Col>
 							</Row>
-						</FormGroup>
-					</Container>
+						</Container>
+					</FormGroup>
 				</Form>
-			</div>
 		);
 	}
 };
