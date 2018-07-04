@@ -55,10 +55,10 @@ class ApplyForm extends React.Component {
 						<Container>
 							<hr />
 							<Row className="top-buffer">
-								<h3>Add Resume</h3>
+								<h3 for="uploadResume">Add Resume</h3>
 							</Row>
 							<Row className="top-buffer">
-								<Input type="file"></Input>
+								<Input type="file" className="form-control-file" id="uploadResume"></Input>
 							</Row>
 							<hr />
 							<Row className="top-buffer">
@@ -93,7 +93,7 @@ class ApplyForm extends React.Component {
 									<Label variant="subheading" for="email">Email</Label>
 								</Col>
 								<Col>
-									<Input type="text" className="form-control" name="email" placeholder="name@example.com"></Input>
+									<Input type="email" className="form-control" name="email" placeholder="name@example.com"></Input>
 								</Col>
 							</Row>
 							<Row className="top-buffer">
