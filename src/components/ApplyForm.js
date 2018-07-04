@@ -4,7 +4,7 @@ import { Container, Row, Col, Button, Form, FormGroup, Label, Input, FormText, D
 
 class ApplyForm extends React.Component {
 
-	//dropdown logic start
+	//state dropdown logic start
 	constructor(props) {
 		super(props);
 	
@@ -26,27 +26,26 @@ class ApplyForm extends React.Component {
 			dropdownValue: event.target.innerText
 		});
 	}
-	//dropdown logic end
+	//state dropdown logic end
 
-	//click handler start
+	//submit form click handler start
 	submitClickHandler = async (event) => {
 		event.preventDefault();
 		//get values from form
 		const firstName = event.target.elements.firstName.value; 
-		//write values to state
+		//write values to state, everything except state dropdown
 		try {
 		  console.log('Submit clicked!'); //TODO: remove
 		  this.setState({
 			test: firstName
 		  });
-		  alert(this.state.test + "-->" + this.state.dropdownValue); //TODO: remove
 		} catch(err) {
 		  this.setState({
 			error: err
 		  });
 		}
 	}
-	//click handler ends
+	//submit form click handler ends
 
 
 	render() {
