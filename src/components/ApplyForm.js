@@ -45,7 +45,7 @@ class ApplyForm extends React.Component {
 		  });
 		}
 	}
-	//click handler end
+	//click handler ends
 
 
 	render() {
