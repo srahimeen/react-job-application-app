@@ -1,1 +1,7 @@
 .top-buffer { margin-top:20px; }
+
+.center_div{
+  margin: 0 auto;
+  width:90%;
+}
+

@@ -32,7 +32,8 @@ class ApplyForm extends React.Component {
 	submitClickHandler = async (event) => {
 		event.preventDefault();
 		//get values from form
-		const firstName = event.target.elements.firstName.value; //TODO: write to api
+		const firstName = event.target.elements.firstName.value; 
+		//write values to state
 		try {
 		  console.log('Submit clicked!'); //TODO: remove
 		  this.setState({
@@ -50,7 +51,7 @@ class ApplyForm extends React.Component {
 
 	render() {
 		return (
-				<Form onSubmit={this.submitClickHandler}>
+				<Form onSubmit={this.submitClickHandler} className="center_div">
 					<FormGroup>
 						<Container>
 							<Row className="top-buffer">
