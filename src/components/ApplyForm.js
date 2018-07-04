@@ -53,6 +53,17 @@ class ApplyForm extends React.Component {
 				<Form onSubmit={this.submitClickHandler} className="center_div">
 					<FormGroup>
 						<Container>
+							<hr />
+							<Row className="top-buffer">
+								<h3>Add Resume</h3>
+							</Row>
+							<Row className="top-buffer">
+								<Input type="file"></Input>
+							</Row>
+							<hr />
+							<Row className="top-buffer">
+							<h3>Personal Information</h3>
+							</Row>
 							<Row className="top-buffer">
 								<Col>
 									<Label variant="subheading" for="firstName">First Name</Label>
@@ -134,14 +145,7 @@ class ApplyForm extends React.Component {
 									<Input type="text" className="form-control" name="phone" placeholder="Phone Number"></Input>
 								</Col>
 							</Row>
-							<Row className="top-buffer">
-								<Col>
-									<Label variant="subheading" for="resume">Resume</Label>
-								</Col>
-								<Col>
-									<Input type="file"></Input>
-								</Col>
-							</Row>
+							<hr />
 							<Row className="justify-content-center top-buffer">
 								<Col>
 									<Button type="submit" className="btn btn-primary" color="primary">Submit</Button>
