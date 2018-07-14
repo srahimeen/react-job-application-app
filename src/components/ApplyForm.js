@@ -11,7 +11,7 @@ class ApplyForm extends React.Component {
 		this.toggle = this.toggle.bind(this);
 		this.state = {
 		  dropdownOpen: false,
-		  dropdownValue: "Select"
+		  locationState: "Select"
 		};
 	  }
 	
@@ -23,7 +23,7 @@ class ApplyForm extends React.Component {
 
 	select = async (event) => {
 		this.setState({
-			dropdownValue: event.target.innerText
+			locationState: event.target.innerText
 		});
 	}
 	//state dropdown logic end
@@ -33,12 +33,29 @@ class ApplyForm extends React.Component {
 		event.preventDefault();
 		//get values from form
 		const firstName = event.target.elements.firstName.value; 
+		const lastName = event.target.elements.lastName.value;
+		const middleName = event.target.elements.middleName.value;
+		const email = event.target.elements.email.value;
+		const addressLine1 = event.target.elements.addressLine1.value;
+		const addressLine2 = event.target.elements.addressLine2.value;
+		const city = event.target.elements.city.value;
+		const zipCode = event.target.elements.zipCode.value;
+		const phone = event.target.elements.phone.value;
 		//write values to state, everything except state dropdown
 		try {
 		  console.log('Submit clicked!'); //TODO: remove
 		  this.setState({
-			test: firstName
+			firstName: firstName,
+			lastName: lastName,
+			middleName: middleName,
+			email: email,
+			addressLine1: addressLine1,
+			addressLine2: addressLine2,
+			city: city,
+			zipCode: zipCode,
+			phone: phone
 		  });
+		  console.log(this.state);
 		} catch(err) {
 		  this.setState({
 			error: err
@@ -114,10 +131,10 @@ class ApplyForm extends React.Component {
 							</Row>
 							<Row className="top-buffer">
 								<Col>
-									<Label variant="subheading" for="zipCode">Zip Code</Label>
+									<Label variant="subheading" for="city">City</Label>
 								</Col>
 								<Col>
-									<Input type="text" className="form-control" name="zipCode" placeholder="12345"></Input>
+									<Input type="text" className="form-control" name="city" placeholder="City"></Input>
 								</Col>
 							</Row>
 							<Row className="top-buffer">
@@ -127,7 +144,7 @@ class ApplyForm extends React.Component {
 								<Col>
 									<Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
 										<DropdownToggle caret color="primary">
-											{this.state.dropdownValue}
+											{this.state.locationState}
 										</DropdownToggle>
 										<DropdownMenu>
 											<DropdownItem onClick={this.select}>FL</DropdownItem>
@@ -135,6 +152,14 @@ class ApplyForm extends React.Component {
 											<DropdownItem onClick={this.select}>NY</DropdownItem>
 										</DropdownMenu>
 									</Dropdown>
+								</Col>
+							</Row>
+							<Row className="top-buffer">
+								<Col>
+									<Label variant="subheading" for="zipCode">Zip Code</Label>
+								</Col>
+								<Col>
+									<Input type="text" className="form-control" name="zipCode" placeholder="12345"></Input>
 								</Col>
 							</Row>
 							<Row className="top-buffer">
