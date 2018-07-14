@@ -32,6 +32,7 @@ class ApplyForm extends React.Component {
 	submitClickHandler = async (event) => {
 		event.preventDefault();
 		//get values from form
+		const uploadResume = event.target.elements.uploadResume.value;
 		const firstName = event.target.elements.firstName.value; 
 		const lastName = event.target.elements.lastName.value;
 		const middleName = event.target.elements.middleName.value;
@@ -45,6 +46,7 @@ class ApplyForm extends React.Component {
 		try {
 		  console.log('Submit clicked!'); //TODO: remove
 		  this.setState({
+			uploadResume: uploadResume,
 			firstName: firstName,
 			lastName: lastName,
 			middleName: middleName,
@@ -75,7 +77,7 @@ class ApplyForm extends React.Component {
 								<h3 for="uploadResume">Add Resume</h3>
 							</Row>
 							<Row className="top-buffer">
-								<Input type="file" className="form-control-file" id="uploadResume"></Input>
+								<Input type="file" className="form-control-file" id="uploadResume" name="uploadResume"></Input>
 							</Row>
 							<hr />
 							<Row className="top-buffer">
