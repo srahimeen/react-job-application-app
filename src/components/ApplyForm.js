@@ -11,7 +11,8 @@ class ApplyForm extends React.Component {
 		this.toggle = this.toggle.bind(this);
 		this.state = {
 		  dropdownOpen: false,
-		  locationState: "Select"
+		  locationState: "Select",
+		  submitted: false
 		};
 	  }
 	
@@ -55,7 +56,8 @@ class ApplyForm extends React.Component {
 			addressLine2: addressLine2,
 			city: city,
 			zipCode: zipCode,
-			phone: phone
+			phone: phone,
+			submitted: true
 		  });
 		  console.log(this.state);
 		} catch(err) {
